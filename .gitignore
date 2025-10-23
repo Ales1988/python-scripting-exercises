@@ -73,3 +73,6 @@ desktop.ini
 # Temporary files
 *.log
 *.tmp
+
+# Resources
+src/scripts/image_processing/image/
