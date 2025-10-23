@@ -30,4 +30,4 @@ def run_conversion(origin_path: Path, destination_path: Path):
 
         print(file_path.stem)  # just the file name without path or extension
         img = Image.open(file_path)
-        img.save(destination_path / (file_path.stem + ".png"))
+        img.save(destination_path / (file_path.stem + ".png"), format="PNG")
