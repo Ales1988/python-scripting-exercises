@@ -1,3 +1,4 @@
+# To run the tests, run this in the root project folder
 # python -m unittest discover -s tests
 
 import unittest
