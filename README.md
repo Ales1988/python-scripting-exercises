@@ -2,15 +2,24 @@
 
 Collections of scripts based on "The Complete Python Developer" course by Andrei Neagoie. This is a learning project for practicing Python.
 
+Note: Unit tests and data validation are partial; this project is for learning purposes only and does not cover every scenario.
+
 ## Scripts
 
 ### 1. Image Processing
 Converts images from JPEG to PNG.
-To run the script: 
-python {path}/src/scripts/image_processing/image_converter.py {origin_path} {destination_folder}
+Run the script in the project root: 
+python src/scripts/image_processing/image_converter.py {origin_path} {destination_folder}
 
 Where:
 - origin_path is the path to the folder with jpeg files
 - destination_folder is the destination folder name
 
 Note: destination folder will be create at the same level as the origin folder
+
+### 2. Pdf merger
+Merges two or more pdf files.
+Run the script in the project root: 
+python src/scripts/pdf_merger/main.py {pdf1 path} {pdf2 path} {pdf3 path}
+
+Note: destination folder is project_root/resources/pdf_merger/merged.pdf"
