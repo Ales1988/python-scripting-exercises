@@ -10,7 +10,8 @@ class TestMergePdf(unittest.TestCase):
     # When passing a not existing file to the script
     def test_file_notexists(self):
         inputs = [Path("notafile.pdf")]
-        main.pdf_combiner(inputs)
+        result = main.pdf_combiner(inputs)
+        self.assertEqual(result, "Error: missing or invalid files.")
 
 
 if __name__ == "__main__":
