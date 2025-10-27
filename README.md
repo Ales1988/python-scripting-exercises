@@ -25,9 +25,13 @@ python src/scripts/pdf_merger/main.py {pdf1 path} {pdf2 path} {pdf3 path}
 Note: destination folder is project_root/resources/pdf_merger/merged.pdf"
 
 ### 3. Pdf watermarker
-This script add a watermark to each page of a pdf file.
+This script adds a watermark to each page of a pdf file.
 To run the script:
 python src/scripts/pdf_watermarker/main.py resources/pdf_watermarker/{file.pdf}
 resources/pdf_watermarker/{watermarker.pdf}
 
 Note: output in resources/pdf_watermarker/watermarked.pdf
+
+### 4. Email sender
+Basic script to send email with python.
+In this example, credentials are entered manually via input, as password handling, authentication, and data security are outside the scope of this exercise. 
