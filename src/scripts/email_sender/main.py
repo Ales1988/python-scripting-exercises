@@ -4,7 +4,7 @@ from string import Template
 from pathlib import Path
 
 
-def composing_mail(receiver_email):
+def composing_mail(receiver_email: str, name: str) -> EmailMessage:
     # Composing the email
     email = EmailMessage()
     email["from"] = "Alessandro Ulisse Brancolini"
@@ -14,12 +14,12 @@ def composing_mail(receiver_email):
     # Make html a Template instance to later use substitute method
     html = Template(Path("resources/email_sender/index.html").read_text())
     # Use index.html as a template replacing variable $name with ale
-    email.set_content(html.substitute(name="ale"), "html")
+    email.set_content(html.substitute(name=name), "html")
 
     return email
 
 
-def send_email(my_email, my_pass, email):
+def send_email(my_email: str, my_pass: str, email: EmailMessage):
     # Configure SMTP server and send email
     with smtplib.SMTP(host="smtp.gmail.com", port=587) as smtp:
         smtp.ehlo()  # initiate a session between an email client and a server
@@ -31,7 +31,14 @@ def send_email(my_email, my_pass, email):
 my_email = input("Sender email: ")
 receiver_email = input("Receiver email: ")
 my_pass = input("Sender password: ")
+receiver_name = "Ale"
 
-email = composing_mail(receiver_email)
+email = composing_mail(receiver_email, receiver_name)
 
-send_email(my_email, my_pass, email)
+try:
+    send_email(my_email, my_pass, email)
+    print("Email sent.")
+except smtplib.SMTPAuthenticationError:
+    print("Incorrect sender email or password.")
+except Exception as e:
+    print(f"Error: {e}")
