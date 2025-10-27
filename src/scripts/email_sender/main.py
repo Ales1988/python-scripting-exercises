@@ -1,3 +1,9 @@
+"""
+Basic script to send email with python.
+In this example, credentials are entered manually via input, as password handling, authentication, and
+data security are outside the scope of this exercise.
+"""
+
 import smtplib
 from email.message import EmailMessage
 from string import Template
