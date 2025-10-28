@@ -35,3 +35,13 @@ Note: output in resources/pdf_watermarker/watermarked.pdf
 ### 4. Email sender
 Basic script to send email with python.
 In this example, credentials are entered manually via input, as password handling, authentication, and data security are outside the scope of this exercise. 
+
+### 5. Password checker
+This script checks if and how many times a password has been leaked.
+Run it in the root of the project using:
+python src/scripts/password_checker/main.py
+
+The script sends only the first five characters of the password to
+pwned api. Then it receives all leaked password whose hashes start
+with those characters and uses this response locally to check if input password
+has been leaked. It never sends your entire password on the internet.
